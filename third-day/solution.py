@@ -20,4 +20,22 @@ with open('data.txt') as inputFile:
                 score += letter_dict[letter]
                 break
 
+    
+with open('data.txt') as inputFile:
+    lines = inputFile.readlines()
+    index = 0
+    score = 0
+    while index < len(lines):
+        line_1 = lines[index]
+        line_2 = lines[index + 1]
+        line_3 = lines[index + 2]
+
+        for letter in line_1:
+            if letter in line_2 and letter in line_3:
+                score += letter_dict[letter]
+                break
+        
+        index += 3
+
     print(score)
+            
